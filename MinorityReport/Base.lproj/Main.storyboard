@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pre Cogs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ6-ye-3VU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pre Cogs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ6-ye-3VU">
                                 <rect key="frame" x="0.0" y="436" width="600" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -38,7 +38,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Future" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3b-Ca-rAo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="The Future" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3b-Ca-rAo">
                                 <rect key="frame" x="192" y="237" width="222" height="59"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -63,6 +63,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0090191426700000007" green="4.1721490240000002e-06" blue="0.0074865730579999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="L3b-Ca-rAo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4eb-EK-JZL"/>
                             <constraint firstItem="aJ6-ye-3VU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Lpf-2L-61h"/>
@@ -88,10 +89,22 @@
                                 <include reference="p24-Q6-nN2"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RKP-ZH-SZp" appends="YES" id="HvV-oC-cWc"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Minority Report Command Center" id="ogt-hv-Rx1"/>
+                    <connections>
+                        <outlet property="futureLabel" destination="L3b-Ca-rAo" id="8yx-v3-wjm"/>
+                        <outlet property="preCogLabel" destination="aJ6-ye-3VU" id="IDS-kA-idJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="RKP-ZH-SZp">
+                    <connections>
+                        <action selector="onDrag:" destination="BYZ-38-t0r" id="uLs-WB-Md3"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1116" y="364"/>
         </scene>
